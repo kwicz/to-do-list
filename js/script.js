@@ -23,26 +23,26 @@ $(document).ready(function(){
     event.preventDefault();
     var newItem = new toDoItem($("#input").val(), false);
     itemList.addItem(newItem);
-    $("#not-done").append("<input id='check' type='checkbox'> " + newItem.task);
+    $("#not-done").append("<li><input id='" + newItem.id + "' type='checkbox'> " + newItem.task) + "</li>";
+
     $("form").val("");
-  });
 
+  });
+  
   $("#not-done").on("click", "input[type='checkbox']", function() {
-    if($(this).is(":checked")) {
-      var done = true;
-      console.log(typeof done);
-      console.log($(this).parent());
-      $(this).parent().detach();
-      $("#done").append($(this).parent());
-    } else {
-      var done = false;
-      console.log(typeof done);
-
-      console.log("this: " + $(this).val());
-      $("#not-done").append($(this).parent().val());
-      $(this).parent().appendTo($("#not-done"));
-      $(this).parent().detach();
-    }
-     
+    var id = parseInt(event.target.id);
+    console.log(id);
+    var change = itemList.toDoItems[id].done;
+    change = true;
+    $(this).parent().detach();
+    $("#done").append($(this).parent());
   });
+  
+  $("#done").on("click", "input[type='checkbox']", function() {
+    var change = itemList.toDoItems[id].done;
+    change = false;
+    $(this).parent().detach();
+    $("#not-done").append($(this).parent());
+    $(this).parent().appendTo($("#not-done"));
+    });
 });

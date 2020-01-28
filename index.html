@@ -14,22 +14,36 @@
 
 <body>
   <div class="container">
-    <br>
-    <form>
-      <div class="form-group">
-        <input type="text" id="input" placeholder="To Do Item:">
-      </div>
-      <button type="submit" class="btn btn-info">Submit</button>
-    </form>
-    <hr>
-    <h5>Not Done</h5>
-    <div class="container" id="not-done">
+    <div class="jumbotron">
+      <h1>To Do List</h1>
     </div>
-    <hr>
-    <h5>Done</h5>
-    <div class="container" id="done">
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Add a New Item</h5>
+        <hr>
+        <form>
+          <div class="form-group">
+            <input type="text" id="input" placeholder="To Do Item:">
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <h5>Not Done</h5>
+        <hr>
+        <div class="container" id="not-done">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5>Done</h5>
+        <hr>
+        <div class="container" id="done">
+        </div>
+      </div>
     </div>
   </div>
+
 </body>
 
 </html>
